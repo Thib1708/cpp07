@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+        */
+/*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:56:15 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/09/13 17:09:24 by thibaultgir      ###   ########.fr       */
+/*   Updated: 2023/09/20 09:44:31 by tgiraudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@
 #include <iostream>
 
 template<typename T>
-void	iter(T *array, int length, void (*f)(T &))
+void	iter(T *array, int length, void (*f)(T const &))
 {
 	for( int i = 0; i < length; i++)
 		f(array[i]);
 }
 
 template<typename T>
-void	print(T &array)
+void	print(T const &array)
 {
-	std::cout << array << std::endl;
+	std::cout << "> " << array << std::endl;
 }
 
 #endif

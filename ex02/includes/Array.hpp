@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thibaultgiraudon <thibaultgiraudon@stud    +#+  +:+       +#+        */
+/*   By: tgiraudo <tgiraudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 13:11:57 by thibaultgir       #+#    #+#             */
-/*   Updated: 2023/09/13 19:20:19 by thibaultgir      ###   ########.fr       */
+/*   Updated: 2023/09/20 09:49:59 by tgiraudo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,22 +27,22 @@
 
 template <typename T>
 class Array {
-    private:
-        T       *_array;
-        size_t  _size;
-    public:
-        Array( void );
-        Array( size_t n );
-        ~Array( void );
-        Array( const Array & );
-        Array& operator=( const Array &);
+	private:
+		T       *_array;
+		size_t  _size;
+	public:
+		Array( void );
+		Array( size_t n );
+		~Array( void );
+		Array( const Array & );
+		Array& operator=( const Array &);
 
-        size_t  getSize( void ) const;
-        T &operator[](unsigned int i) const;
-        class OutOfBounds: public std::exception {
-				public :
-						virtual const char	*what( void ) const throw();
-			};
+		size_t  getSize( void ) const;
+		T &operator[](unsigned int i) const;
+		class OutOfBounds: public std::exception {
+			public :
+				virtual const char	*what( void ) const throw();
+		};
 };
 
 # include "Array.tpp"
